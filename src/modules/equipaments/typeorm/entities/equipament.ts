@@ -9,8 +9,8 @@ class equipament {
     @Column()
     name: string;
 
-    @Column('int')
-    serial_number: number;
+    @Column()
+    serial_number: string;
 
     @CreateDateColumn()
     created_at:  Date;
