@@ -3,6 +3,7 @@ import {MigrationInterface, QueryRunner, Table} from "typeorm";
 export class CreateEquipaments1638324286837 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query('CREATE EXTENSION IF NOT EISTS "uuid-ossp"');
     await queryRunner.createTable(
       new Table({
         name: 'equipaments',
