@@ -8,7 +8,7 @@ interface IRequest {
 }
 
 class ShowEquipamentService {
-  public async execute({ id }: IRequest): Promise<Equipament | undefined>{
+  public async execute({ id }: IRequest): Promise<Equipament>{
     const equipamentsRepository = getCustomRepository(EquipamentsRepository);
 
     const equipament= await equipamentsRepository.findOne(id);
