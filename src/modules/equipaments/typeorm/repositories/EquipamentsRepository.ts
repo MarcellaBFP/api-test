@@ -4,6 +4,9 @@ import Product from '../entities/equipament';
 
 @EntityRepository(Product)
 export class EquipamentsRepository extends Repository<equipament> {
+  static remove(equipament: never) {
+      throw new Error('Method not implemented.');
+  }
   static findOne(id: string) {
       throw new Error('Method not implemented.');
   }
