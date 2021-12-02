@@ -18,15 +18,15 @@ class UpdateEquipamentsService {
   }: IRequest): Promise<equipament> {
     const equipamentsRepository = getCustomRepository(EquipamentsRepository);
 
-    const equipament = await EquipamentsRepository.findOne(id);
+    const equipament = await equipamentsRepository.findOne(id);
 
     if (!equipament) {
       throw new AppError('Equipament not found.');
     }
 
-    const productExists = await equipamentsRepository.findByName(serial_number);
+    const equipamentsExists = await equipamentsRepository.findByName(serial_number);
 
-    if (equipamentExists && serial_number != equipament.serial_number) {
+    if (equipamentsExists && serial_number != equipament.serial_number) {
       throw new AppError('There is already one equipament with this serial number');
     }
 
