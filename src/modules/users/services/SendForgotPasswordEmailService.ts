@@ -8,6 +8,9 @@ interface IRequest {
 }
 
 class SendForgotPasswordEmailService {
+  static execute(arg0: {}) {
+      throw new Error('Method not implemented.');
+  }
   public async execute({ email }: IRequest): Promise<void> {
     const usersRepository = getCustomRepository(UsersRepository);
     const userTokensRepository = getCustomRepository(UserTokensRepository);
