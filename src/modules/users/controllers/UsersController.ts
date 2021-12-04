@@ -5,6 +5,7 @@ import ListUserService from "../services/ListUserService";
 export default class UsersController {
     public async index(request: Request, response: Response):  Promise<Response> {
         const listUser = new ListUserService();
+        console.log(request.user.id);
 
         const users = listUser.execute();
 
