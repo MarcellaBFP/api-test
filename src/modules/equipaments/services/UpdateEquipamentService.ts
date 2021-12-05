@@ -1,4 +1,5 @@
 
+import RedisCache from '@shared/cache/RedisCache';
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import equipament from '../typeorm/entities/equipament';
@@ -29,6 +30,10 @@ class UpdateEquipamentsService {
     if (equipamentsExists && serial_number != equipament.serial_number) {
       throw new AppError('There is already one equipament with this serial number');
     }
+
+      const redisCache = new RedisCache();
+
+    await redisCache.invalidate(' api-test-EQUIPAMENT_LIST');
 
     equipament.serial_number = serial_number;
     equipament.name = name;

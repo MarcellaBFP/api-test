@@ -1,3 +1,4 @@
+import RedisCache from '@shared/cache/RedisCache';
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
 import {EquipamentsRepository} from '../typeorm/repositories/EquipamentsRepository';
@@ -15,6 +16,10 @@ class DeleteEquipamentService {
     if (!equipament) {
       throw new AppError('Equipament not found.');
     }
+
+        const redisCache = new RedisCache();
+
+    await redisCache.invalidate(' api-test-EQUIPAMENT_LIST');
 
     await equipamentsRepository.remove(equipament);
   }
