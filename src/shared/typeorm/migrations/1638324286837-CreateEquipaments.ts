@@ -20,8 +20,8 @@ export class CreateEquipaments1638324286837 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'serial number',
-            type: 'int'
+            name: 'serial_number',
+            type: 'int',
           },
           {
             name: 'quantity',

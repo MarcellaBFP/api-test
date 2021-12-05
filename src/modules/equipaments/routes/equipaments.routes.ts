@@ -5,7 +5,7 @@ import{celebrate, Joi, Segments} from 'celebrate'
 const equipamentsRouter =Router();
 const equipamentsController = new EquipamentsController();
 
-equipamentsRouter.get(' / ',  equipamentsController.index);
+equipamentsRouter.get('/',  equipamentsController.index);
 
 equipamentsRouter.get(
     '/:id', 

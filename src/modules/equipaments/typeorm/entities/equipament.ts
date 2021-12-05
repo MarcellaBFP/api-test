@@ -16,7 +16,7 @@ class equipament {
     created_at:  Date;
 
     @CreateDateColumn()
-    update_at:  Date;
+    updated_at:  Date;
 
 
 }
